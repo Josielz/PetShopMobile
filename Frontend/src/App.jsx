@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import './App.css'
 import AdminDashboard from './adminDashboard'
@@ -17,7 +18,7 @@ function App() {
       usuario === 'admin' &&
       senha === 'Admin@123'
     ) {
-      return <></>
+      return
     }
 
     setErro('Usuário ou senha incorretos!')
@@ -47,7 +48,6 @@ function App() {
         </p>
 
         <form onSubmit={handleLogin}>
-
           <label>Tipo de acesso</label>
           <select
             value={tipoAcesso}
@@ -82,7 +82,6 @@ function App() {
           <button type="submit">
             Entrar no sistema
           </button>
-
         </form>
 
         <p className="login-footer">
