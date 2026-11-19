@@ -1,88 +1,79 @@
-[README.md](https://github.com/user-attachments/files/34084965/README.md)
-# 🐶 Pet Shop System
+# Pet Shop
 
-Desenvolvendo um sistema web para Pet Shop.
+Sistema web acadêmico para apoiar o gerenciamento de um Pet Shop. O repositório reúne uma interface em React, uma API HTTP em Express e a estrutura de dados utilizada no Supabase.
 
----
+## Tecnologias
 
-## 👥 Integrantes
+- React 19 e Vite 8 no frontend;
+- Node.js e Express 5 no backend;
+- Supabase Auth para autenticação;
+- PostgreSQL e Row Level Security no banco de dados;
+- Node Test Runner para os testes automatizados do backend.
 
-- Josiel → Login/Cadastro
-- Isaac → CRUD Pets
-- Leonardo → Banco + Supabase
-- João Henrique → Dashboard + Relatórios
-- Aaron → A definir
+## Instalação
 
----
+O frontend e o backend são projetos npm independentes. É necessário ter Node.js e npm instalados. A versão exata do Node.js ainda não está fixada no repositório.
 
-## 🚀 Tecnologias
+### Backend
 
-![FlutterFlow](https://img.shields.io/badge/FlutterFlow-Web%20App%20%2B%20Dashboard-blue?style=for-the-badge)
+```bash
+cd Backend
+npm ci
+```
 
-![Supabase](https://img.shields.io/badge/Supabase-Banco%20%2B%20API-green?style=for-the-badge)
+Crie `Backend/.env` a partir de `Backend/.env.example` e preencha as variáveis com dados do projeto Supabase. Não versione o arquivo `.env` nem exponha a chave `service_role`.
 
-![GitHub](https://img.shields.io/badge/GitHub-Organização-black?style=for-the-badge)
+Com as migrations aplicadas no Supabase, execute:
 
----
+```bash
+npm run dev
+```
 
-## 📌 Objetivo
+A porta padrão da API é `3000`. Ela pode ser alterada pela variável `PORT`.
 
-Criar um **app web** com:
+### Frontend
 
-✅ Login  
-✅ Cadastro  
-✅ CRUD de Pets  
-✅ Vacinas  
-✅ Atendimentos  
-✅ Dashboard  
-✅ Relatórios  
+```bash
+cd Frontend
+npm ci
+npm run dev
+```
 
----
+O endereço local é informado pelo Vite no terminal. A interface atual não realiza chamadas para a API.
 
-## 🗃️ Banco de Dados
+## Validação
 
-### users
-- nome
-- email
-- senha
+```bash
+cd Backend
+npm run check
+npm test
+```
 
-### pets
-- nome
-- raça
-- espécie
-- idade
+```bash
+cd Frontend
+npm run lint
+npm run build
+```
 
-### vacinas
-- vacina
-- data
+O comando `npm run check:supabase` realiza uma consulta real ao Supabase configurado no ambiente e, por isso, requer credenciais locais válidas e as migrations aplicadas.
 
-### atendimentos
-- serviço
-- data
+## Documentação
 
----
+A documentação técnica oficial está centralizada em [`docs/`](docs/README.md):
 
-## 📍 Status Atual
+- visão geral e escopo;
+- arquitetura e estrutura do repositório;
+- configuração do ambiente;
+- banco de dados e Supabase;
+- autenticação e segurança;
+- endpoints e contratos da API;
+- testes e validações;
+- integração entre frontend e backend.
 
-✅ Repositório criado  
-✅ Tecnologias escolhidas  
-✅ Definido que o sistema será um app web (não mais mobile)  
+## Equipe
 
-⬜ Criar contas no FlutterFlow  
-⬜ Criar contas no Supabase  
-⬜ Criar banco  
-⬜ Criar telas  
-⬜ Integrar sistema  
-⬜ Testes finais  
-
----
-
-## 🔥 Próximos passos
-
-1. Criar conta no FlutterFlow  
-2. Criar conta no Supabase  
-3. Leonardo cria banco  
-4. Josiel cria login  
-5. Isaac cria CRUD  
-6. João cria dashboard  
-7. Definir a função do Aaron  
+- Josiel — login e cadastro;
+- Isaac — CRUD de pets;
+- Leonardo — banco de dados e Supabase;
+- João Henrique — dashboard e relatórios;
+- Aaron — integrante da equipe.
