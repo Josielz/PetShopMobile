@@ -1,7 +1,7 @@
 async function checkSupabaseConnection() {
-  const { supabase } = require('../config/supabase');
+  const { supabaseAdmin } = require('../config/supabase');
 
-  const { error } = await supabase
+  const { error } = await supabaseAdmin
     .from('servicos')
     .select('id', { head: true })
     .limit(1);

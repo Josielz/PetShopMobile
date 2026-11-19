@@ -4,12 +4,18 @@ const { getSupabaseConfig } = require('./environment');
 
 const { serviceRoleKey, url } = getSupabaseConfig();
 
-const supabase = createClient(url, serviceRoleKey, {
-  auth: {
-    autoRefreshToken: false,
-    detectSessionInUrl: false,
-    persistSession: false,
-  },
+const serverAuthOptions = {
+  autoRefreshToken: false,
+  detectSessionInUrl: false,
+  persistSession: false,
+};
+
+function createSupabaseAuthClient() {
+  return createClient(url, serviceRoleKey, { auth: serverAuthOptions });
+}
+
+const supabaseAdmin = createClient(url, serviceRoleKey, {
+  auth: serverAuthOptions,
 });
 
-module.exports = { supabase };
+module.exports = { createSupabaseAuthClient, supabaseAdmin };
