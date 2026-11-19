@@ -3,6 +3,7 @@ node_modules/
 
 # Build e testes
 dist/
+build/
 coverage/
 
 # Logs
@@ -14,6 +15,25 @@ coverage/
 !.env.example
 !**/.env.example
 
-# Arquivos locais
+# Credenciais e chaves locais
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Editores e IDEs
+.vscode/
+.idea/
+
+# Cache e arquivos temporários
+.cache/
+.cache-*/
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Arquivos do sistema operacional
 .DS_Store
 Thumbs.db
